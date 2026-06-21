@@ -1,0 +1,40 @@
+@startsalt
+{
+{T
+ + voice-controlled-ac/
+ ++ BOM/
+ +++ BOM.csv | Primary Bill of Materials
+ +++ Optimized_BOM.csv | Applied & optimized data
+ ++ diagrams/ | PlantUML dynamic assets
+ ++ docs/
+ +++ CW3 project design.md | Detailed low-level design document
+ ++ Project Design/
+ +++ CW3 project design.md
+ ++ Test/
+ +++ test.py | Python integration test script
+ ++ Vidoes/
+ +++ Project video.mp4 | Hardware demonstration
+ +++ Testing.mp4 | Unit & logic check validation
+ ++ Voice_Controlled_AC/
+ +++ Adc.h
+ +++ Adc.ino
+ +++ Button.h
+ +++ Button.ino
+ +++ DC_Motor.h
+ +++ DC_Motor.ino
+ +++ Dio.h
+ +++ Dio.ino
+ +++ Lcd.h
+ +++ Lcd.ino
+ +++ myString.h
+ +++ myString.ino
+ +++ Pwm.h
+ +++ Pwm.ino
+ +++ Uart.h
+ +++ Uart.ino
+ +++ Voice_Controlled_AC.ino | Main sketch compilation entry point
+ +++ voice_recognizer.py | Desktop Python NLP engine interface
+ ++ README.md | Main repository landing page
+}
+}
+@endsalt
