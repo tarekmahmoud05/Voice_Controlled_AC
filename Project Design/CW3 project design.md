@@ -54,87 +54,10 @@ UART Communication Protocol: The specific framing, parsing, and transmission log
 
 
 ## Architectural Overview
+![Architectural Overview Diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/tarekmahmoud05/Voice_Controlled_AC/main/diagrams/Architecture.puml)
 
-```plantuml
-@startuml
-
-package "High-Level Architecture" {
-    [Voice_Controlled_AC.ino] 
-
-}
-
-
-package "Mid_Level Architecture"{
-    package "Dio"{
-        [Dio.ino]
-        [Dio.h]
-    }
-    package "LCD"{
-        [Lcd.ino]
-        [Lcd.h]
-    }
-
-    package "Uart"{
-    [Uart.ino]
-    [Uart.h]
-    }    
-    package "Button"{
-    [Button.ino]
-    [Button.h]
-    }
-    package "Adc"{
-    [Adc.ino]
-    [Adc.h]
-    }
-    package "myString"{
-    [myString.ino]
-    [myString.h]
-    }
-    package "pwm"{
-    [pwm.ino]
-    [pwm.h]
-    }
-
-    package "DC_Motor"{
-    [DC_Motor.ino]
-    [DC_Motor.h]
-    }
-}
-
-
-
-
-"High-Level Architecture".>"Mid_Level Architecture"
-    
-
-@enduml
-```
 ### Assumptions & Constraints
-
-```plantuml
-@startuml
-package "Assumptions & Constraints" {
-    package "Assumptions"{
-  
-    [The clock frequency is 16000000UL]
-    [Push button connected in pulldown]
-    [The target hardware platform is an AVR ATmega328P ]
-    [The ADC reference voltage is set to AVcc, assumed to be 5V.] 
-    [The LCD is in 4-bit mode]
-    [PWM pin is connected to PB2]
-}
-    package "Constraints"{
-    [UART baud rate fixed to 9600]
-    [The motor speed is controlled via Timer 1 Fast PWM using an 8-bit resolution (0-255)]
-    [Button must be debounced]
-    [The button mapped speed is betweeen 165 and 255 due curent limitations]
-    [UART input buffer size is 5]
-    [Debounce is applied, button should be release after it is pressed]
-    [The DC motor is only engaged when the temperature difference exceeds a threshold]
-    }
-}
-@enduml
-```
+![Assumptions and Constraints Diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/tarekmahmoud05/Voice_Controlled_AC/main/diagrams/Assumptions.puml)
 
 ## Functional Description
 
@@ -349,30 +272,7 @@ The UCM module consists of the following arduino and header files:
 
 ### Include Structure
 
-```plantuml
-@startuml
-package "pkg" {
-    [voice_Controlled_AC.ino]<...[Uart.h] : includes Uart functions for sending data
-    [voice_Controlled_AC.ino]<...[Dio.h]: includes functions of inputs and outputs and number and string functions
-    [voice_Controlled_AC.ino]<...[Adc.h]: includes functions of ADC reading via LDR sensor
-    [voice_Controlled_AC.ino]<...[Lcd.h]: includes functions for displaying on LCD
-    [voice_Controlled_AC.ino]<...[Pwm.h]: includes functions of PWM
-    [voice_Controlled_AC.ino]<...[DC_Motor.h]: includes CD_Motor control funcitons
-    [voice_Controlled_AC.ino]<...[Button.h]: includes buttons reading funcitons
-    [voice_Controlled_AC.ino]<...[myString.h]: includes string funcitons
-    [Uart.h]...>[Uart.ino]: Declaration
-    [Dio.h]...>[Dio.ino] : Declaration
-    [Adc.h]...>[Adc.ino] : Declaration
-    [Lcd.h]...>[Lcd.ino] : Declaration
-    [Pwm.h]...>[Pwm.ino] : Declaration
-    [DC_Motor.h]...>[DC_Motor.h] : Declaration
-    [Dio.h]...>[Led.ino] : includes digital i/o functions
-    [myString.h]...>[myString.ino] : Declaration
-    [Button.h]...>[Button.ino] : Declaration
-
-}
-@enduml
-```
+![Include Structure Diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/tarekmahmoud05/Voice_Controlled_AC/main/diagrams/Structure.puml)
 
 ### Configuration
 The following parameters must be define according to the user case and situation.
