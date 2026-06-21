@@ -1,0 +1,23 @@
+@startuml
+skinparam componentStyle rectangle
+
+package "Host PC" {
+    [Python Voice App\n(PyAudio + Google Speech API + GUI)] as PC
+}
+
+package "Hardware System" {
+    [ATMega328P Firmware\n(Embedded C)] as MCU
+    [Dual LM35 Sensors\n(Cabin / Ambient)] as Sensors
+    [16x2 LCD Display\n(Status + Temps)] as LCD
+    [Custom L293D Motor\nDriver Shield (PCB)] as L293D
+    [DC Fan\n(Intake/Exhaust)] as Fan
+}
+
+' Connections
+PC <--> MCU : UART (9600 bps)
+MCU --> Sensors
+MCU --> LCD
+MCU --> L293D
+L293D --> Fan
+
+@enduml
