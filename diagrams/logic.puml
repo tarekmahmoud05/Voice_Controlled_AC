@@ -1,0 +1,32 @@
+@startuml
+skinparam conditionStyle diamond
+
+start
+
+:Calculate difference = |inTemp - targetTemp|;
+
+if (difference <= 2) then (yes)
+  :stop();
+  note right: within deadband, motor off
+else (no)
+  if (inTemp > targetTemp) then (cabin too hot)
+    if (outTemp < inTemp) then (outside cooler)
+      :fan(speed);
+      note right: intake
+    else (outside hotter)
+      :hood(speed);
+      note right: exhaust
+    endif
+  else (cabin too cold)
+    if (outTemp > inTemp) then (outside warmer)
+      :fan(speed);
+      note right: intake
+    else (no useful airflow)
+      :stop();
+    endif
+  endif
+endif
+
+stop
+
+@enduml
