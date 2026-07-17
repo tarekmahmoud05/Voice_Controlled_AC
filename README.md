@@ -40,7 +40,7 @@ This project tackles that with a **roof-mounted ventilation system** built aroun
 
 ![System Architecture Diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/tarekmahmoud05/Voice_Controlled_AC/main/diagrams/architecture.puml)
 
-The firmware is organized into modular driver layers (ADC, DIO, PWM, UART, LCD, Button, String utilities), each with its own `.ino`/`.h` pair, integrated in a top-level main file. Full module breakdown, pin mapping, and control-flow diagrams are in [`docs/CW3_project_design.md`](docs/CW3_project_design.md).
+The firmware is organized into modular driver layers (ADC, DIO, PWM, UART, LCD, Button, String utilities), each with its own `.ino`/`.h` pair, integrated in a top-level main file. Full module breakdown, pin mapping, and control-flow diagrams are in [`docs/CW3_project_design.md`](Project Design/CW3_project_design.md).
 
 ## 🔧 Hardware
 
