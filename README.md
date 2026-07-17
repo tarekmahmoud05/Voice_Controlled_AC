@@ -164,7 +164,7 @@ Specialized in **Electrical and Electronics Engineering**
 ## 📚 References
 
 1. Alkhalaf, A., et al. (2021). *Investigation of the Effect of Solar Ventilation on the Cabin Temperature of Vehicles Parked under the Sun.* [mdpi.com](https://www.mdpi.com/2071-1050/13/24/13963)
-2. Farrington, R. & Rugh, J. (2000). *Impact of vehicle air-conditioning on fuel economy.* [nrel.gov](https://www.nrel.gov/docs/fy00osti/28960.pdf)
+2. Farrington, R. & Rugh, J. (2000). *Impact of vehicle air-conditioning on fuel economy.* [nrl.gov](https://docs.nlr.gov/docs/fy00osti/28960.pdf)
 3. NHTSA (2021). *Driver distraction and in-vehicle climate controls.* [crashstats.nhtsa.dot.gov](https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813064)
 
 ---
