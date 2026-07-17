@@ -92,7 +92,7 @@ PCB schematics, layout files, and Gerber/G-code outputs are in [`pcb/`](pcb).
 
 Speed is mapped from the temperature difference onto an 8-bit PWM duty cycle (165–255 range, set by Timer 1 in Fast PWM Mode 14), generated via `OCR1B`. Direction is set through PD2/PD3, and motor commands are wrapped in `fan()`, `hood()`, and `stop()` helper functions on top of low-level `DC_Start`/`DC_Stop` calls.
 
-Full firmware control flow, initialization routines, and the UART status-string framing are documented in [`docs/CW3_project_design.md`](docs/CW3_project_design.md).
+Full firmware control flow, initialization routines, and the UART status-string framing are documented in [Project Design/CW3_project_design.md](Project%20Design/CW3%20project%20design.md)
 
 ## 🎙️ Voice Recognition Interface
 
